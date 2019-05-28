@@ -4,12 +4,12 @@ public class Division implements Operation {
 
     @Override
     public float execute(float operand1, float operand2) {
-        try {
-            return operand1 / operand2;
-        }catch(Exception e) {
+        if (operand2 == 0) {
             System.out.println("Division por 0");
+            return 0;
+        }else {
+            return operand1 / operand2;
         }
-        return 0;
     }
 
     Division() {}

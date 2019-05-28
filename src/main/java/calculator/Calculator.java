@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Calculator {
+class Calculator {
     private float operand1;
     private float operand2;
 
