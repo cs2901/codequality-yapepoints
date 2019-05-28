@@ -20,11 +20,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-            <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
-            <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
+        <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
+        <spring.cloud.version>Camden.RELEASE</spring.cloud.version>
 
-            <docker.image.name>docker-example</docker.image.name>
-            <docker.maven.plugin.version>0.4.13</docker.maven.plugin.version>
+        <docker.image.name>docker-example</docker.image.name>
+        <docker.maven.plugin.version>0.4.13</docker.maven.plugin.version>
 
     </properties>
 
