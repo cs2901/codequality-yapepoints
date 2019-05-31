@@ -9,7 +9,7 @@ class Calculator {
     private float operand2;
 
     private Operation operation;
-    private ArrayList<Operation> availableOperations = new ArrayList<Operation>();
+    private ArrayList<Operation> availableOperations = new ArrayList<>();
     private boolean exit = false;
 
     Calculator() {
