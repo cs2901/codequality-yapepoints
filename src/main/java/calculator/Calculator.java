@@ -1,10 +1,9 @@
 package calculator;
 
-import org.apache.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import org.apache.log4j.Logger;
 
 class Calculator {
     private float operand1;
