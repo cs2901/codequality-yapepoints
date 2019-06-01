@@ -1,5 +1,7 @@
 package calculator;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -11,6 +13,7 @@ class Calculator {
     private Operation operation;
     private ArrayList<Operation> availableOperations = new ArrayList<>();
     private boolean exit = false;
+    private Logger logger = Logger.getLogger(Calculator.class);
 
     Calculator() {
         Operation addition = new Addition();
@@ -25,7 +28,8 @@ class Calculator {
 
     private void getInput() {
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Ingrese la operacion \"numero operador numero\": ");
+
+        logger.debug("Ingrese la operacion \"numero operador numero\": ");
 
         String line = myObj.nextLine();
         StringTokenizer st = new StringTokenizer(line);
@@ -33,16 +37,22 @@ class Calculator {
             operand1 = Float.parseFloat(st.nextToken());
             String op = st.nextToken();
 
-            if(op.equals("+")) {
-                operation = availableOperations.get(0);
-            }else if(op.equals("-")) {
-                operation = availableOperations.get(1);
-            }else if(op.equals("*")) {
-                operation = availableOperations.get(2);
-            }else if(op.equals("/")) {
-                operation = availableOperations.get(3);
-            }else {
-                exit = true;
+            switch (op) {
+                case "+":
+                    operation = availableOperations.get(0);
+                    break;
+                case "-":
+                    operation = availableOperations.get(1);
+                    break;
+                case "*":
+                    operation = availableOperations.get(2);
+                    break;
+                case "/":
+                    operation = availableOperations.get(3);
+                    break;
+                default:
+                    exit = true;
+                    break;
             }
 
             operand2 = Float.parseFloat(st.nextToken());
@@ -56,11 +66,12 @@ class Calculator {
         while (true) {
             getInput();
             if(exit) {
-                System.out.println("Adios");
+                logger.debug("Adios");
                 break;
             }else {
-                System.out.println(operation.execute(operand1, operand2));
+                logger.debug(operation.execute(operand1, operand2));
             }
         }
     }
 }
+
